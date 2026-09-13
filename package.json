@@ -1,23 +1,38 @@
 {
   "name": "ts-rate-limiter",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "12.4.1",
-      "onFail": "download"
+  "description": "Production-ready rate limiting for Node.js applications",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "benchmark": "tsx benchmarks/index.ts",
+    "check": "pnpm typecheck && pnpm lint && pnpm test && pnpm build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
   "packageManager": "pnpm@12.4.1",
-  "type": "module",
   "dependencies": {
     "fastify": "^5.12.4"
   },
@@ -30,7 +45,7 @@
     "prettier": "^3.9.6",
     "tinybench": "^6.2.0",
     "tsup": "^8.5.1",
-    "typescript": "^7.0.2",
-    "vitest": "^5.0.0"
+    "typescript": "^5.6.3",
+    "vitest": "^1.0.0"
   }
 }
