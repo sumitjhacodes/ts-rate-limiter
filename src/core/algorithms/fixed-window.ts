@@ -1,4 +1,4 @@
-import type { FixedWindowConfig, FixedWindowState, RateLimitResult } from "../types";
+import type { FixedWindowConfig, FixedWindowState, RateLimitResult } from "../types.js";
 
 export function fixedWindowConsume(
   state: FixedWindowState | undefined,
