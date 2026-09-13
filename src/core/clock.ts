@@ -6,7 +6,7 @@ export const systemClock: Clock = {
   now: () => Date.now(),
 };
 
-/** Controllable clock for tests. */
+// Controllable clock for tests. 
 export class FakeClock implements Clock {
   constructor(private ms: number = 0) {}
 
