@@ -1,7 +1,7 @@
 {
   "name": "ts-rate-limiter",
-  "version": "1.0.0",
-  "description": "Production-ready rate limiting for Node.js applications",
+  "version": "0.1.0",
+  "description": "Rate limiting for Node.js applications",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -14,38 +14,22 @@
     }
   },
   "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
+    "dist"
   ],
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest",
-    "lint": "eslint .",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "benchmark": "tsx benchmarks/index.ts",
-    "check": "pnpm typecheck && pnpm lint && pnpm test && pnpm build"
+    "test:watch": "vitest"
   },
   "engines": {
     "node": ">=20"
   },
   "packageManager": "pnpm@12.4.1",
-  "dependencies": {
-    "fastify": "^5.12.4"
-  },
   "devDependencies": {
-    "@changesets/cli": "^3.0.2",
-    "@types/node": "^26.5.1",
-    "eslint": "^10.10.0",
-    "husky": "^9.1.7",
-    "lint-staged": "^17.5.1",
-    "prettier": "^3.9.6",
-    "tinybench": "^6.2.0",
+    "@types/node": "^22.13.10",
     "tsup": "^8.5.1",
     "typescript": "^5.6.3",
-    "vitest": "^1.0.0"
+    "vitest": "^3.0.0"
   }
 }
